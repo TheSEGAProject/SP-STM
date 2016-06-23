@@ -1,0 +1,907 @@
+******************************************************************************
+                  MSP430 Linker PC v4.4.4                      
+******************************************************************************
+>> Linked Fri Jun 17 11:21:57 2016
+
+OUTPUT FILE NAME:   <SP_STM.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs_noexit"  address: 0000da62
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000800  00000104  000006fc  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fde  00001c52  0000238c  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000002  00000000  RWIX
+  INT12                 0000fff8   00000002  00000002  00000000  RWIX
+  INT13                 0000fffa   00000002  00000002  00000000  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bss       0    00000200    000000b4     UNINITIALIZED
+                  00000200    00000049     comm.obj (.bss)
+                  00000249    00000001     --HOLE--
+                  0000024a    0000003b     main.obj (.bss)
+                  00000285    00000001     --HOLE--
+                  00000286    00000025     STM.obj (.bss)
+                  000002ab    00000001     --HOLE--
+                  000002ac    00000008     core.obj (.bss)
+
+.data      0    00000200    00000000     UNINITIALIZED
+
+.stack     0    000009b0    00000050     UNINITIALIZED
+                  000009b0    00000002     rts430.lib : boot.obj (.stack)
+                  000009b2    0000004e     --HOLE--
+
+.text      0    0000c000    00001b84     
+                  0000c000    00000536     core.obj (.text:vCORE_Run)
+                  0000c536    0000028c     STM.obj (.text:cSTM_ReadValue)
+                  0000c7c2    00000162     STM.obj (.text:cSTM_RequestSensorType)
+                  0000c924    00000106     STM.obj (.text:cSTM_Measure)
+                  0000ca2a    000000f4     main.obj (.text:uiMain_STM3)
+                  0000cb1e    000000f2     main.obj (.text:uiMain_STM1)
+                  0000cc10    000000f2     main.obj (.text:uiMain_STM2)
+                  0000cd02    000000f2     main.obj (.text:uiMain_STM4)
+                  0000cdf4    000000ca     main.obj (.text:vMain_FetchLabel)
+                  0000cebe    000000c0     irupt.obj (.text:TIMERB1_ISR)
+                  0000cf7e    000000b4     comm.obj (.text:ucCOMM_SendByte)
+                  0000d032    000000a4     comm.obj (.text:ucCOMM_ReceiveByte)
+                  0000d0d6    000000a4     core.obj (.text:vCORE_Initilize)
+                  0000d17a    00000094     irupt.obj (.text:PORT1_ISR)
+                  0000d20e    00000084     main.obj (.text:ucMain_FetchData)
+                  0000d292    00000074     crc.obj (.text:ucCRC16_compute_msg_CRC)
+                  0000d306    00000072     core.obj (.text:unCORE_GetVoltage)
+                  0000d378    00000070     flash.obj (.text:vFlash_GetBSLPW)
+                  0000d3e8    0000005c     STM.obj (.text:cSTM_Test_Checksum)
+                  0000d444    00000054     comm.obj (.text:ucCOMM_GrabMessageFromBuffer)
+                  0000d498    00000054     main.obj (.text:vMain_CleanDataStruct)
+                  0000d4ec    00000052     flash.obj (.text:ucFlash_SetHID)
+                  0000d53e    0000004c     rts430.lib : lsr16.obj (.text)
+                  0000d58a    0000004c     comm.obj (.text:vCOMM_Init)
+                  0000d5d6    00000048     rts430.lib : autoinit.obj (.text:_auto_init)
+                  0000d61e    00000040     flash.obj (.text:vFlash_Write_Segment)
+                  0000d65e    0000003e     rts430.lib : asr32.obj (.text:l_asr_const)
+                  0000d69c    0000003e     comm.obj (.text:ucCOMM_WaitForStartCondition)
+                  0000d6da    0000003e     crc.obj (.text:vCRC16_updateNibble)
+                  0000d718    0000003c     comm.obj (.text:ucCOMM_WaitForMessage)
+                  0000d754    0000003c     comm.obj (.text:vCOMM_SendMessage)
+                  0000d790    0000003a     main.obj (.text:uiMainDispatch)
+                  0000d7ca    00000036     STM.obj (.text:vSTM_Initialize)
+                  0000d800    00000034     flash.obj (.text:ucFlash_Write_Byte)
+                  0000d834    00000034     flash.obj (.text:vFlash_Read_Segment)
+                  0000d868    00000032     STM.obj (.text:cSTM_ReturnSensorType)
+                  0000d89a    0000002e     rts430.lib : mult32_hw.obj (.text)
+                  0000d8c8    0000002e     flash.obj (.text:vFlash_DisIncorrect_BSLPW_Erase)
+                  0000d8f6    0000002c     rts430.lib : asr16.obj (.text)
+                  0000d922    0000002c                : div16s.obj (.text)
+                  0000d94e    0000002c                : lsl16.obj (.text)
+                  0000d97a    0000002c     core.obj (.text:vCORE_Send_ErrorMsg)
+                  0000d9a6    00000028     irupt.obj (.text:PORT2_ISR)
+                  0000d9ce    00000028     flash.obj (.text:uiFlash_Read_Int)
+                  0000d9f6    00000028     core.obj (.text:vCORE_Send_ConfirmPKT)
+                  0000da1e    00000026     flash.obj (.text:vFlash_GetHID)
+                  0000da44    0000001e     flash.obj (.text:vFlash_Erase_Seg)
+                  0000da62    0000001a     rts430.lib : boot_special.obj (.text:_c_int00_noargs_noexit)
+                  0000da7c    0000001a     crc.obj (.text:vCRC16_updateByte)
+                  0000da96    00000018     main.obj (.text:uiMain_Test)
+                  0000daae    00000018     flash.obj (.text:vFlash_init)
+                  0000dac6    00000016     rts430.lib : div16u.obj (.text)
+                  0000dadc    00000014                : mult16_hw.obj (.text)
+                  0000daf0    00000012     main.obj (.text:main)
+                  0000db02    00000012     rts430.lib : memcpy.obj (.text:memcpy)
+                  0000db14    00000012     main.obj (.text:ucMain_getTransducerType)
+                  0000db26    00000010     rts430.lib : lsl32.obj (.text:l_lsl)
+                  0000db36    00000010                : epilog.obj (.text)
+                  0000db46    0000000a     STM.obj (.text:lSTM_GetSoil)
+                  0000db50    00000006     rts430.lib : isr_trap.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000db56    00000006     STM.obj (.text:iSTM_GetTemp)
+                  0000db5c    00000006     main.obj (.text:ucMAIN_ReturnSensorType)
+                  0000db62    00000006     main.obj (.text:vMAIN_RequestSensorType)
+                  0000db68    00000004     rts430.lib : pre_init.obj (.text:_system_pre_init)
+                  0000db6c    00000004                : exit.obj (.text:abort)
+                  0000db70    00000004     main.obj (.text:ucMain_ShutdownAllowed)
+                  0000db74    00000004     main.obj (.text:ucMain_getNumTransducers)
+                  0000db78    00000004     main.obj (.text:ucMain_getSampleDuration)
+                  0000db7c    00000002     irupt.obj (.text:COMPARATORA_ISR)
+                  0000db7e    00000002     irupt.obj (.text:NMI_ISR)
+                  0000db80    00000002     irupt.obj (.text:TIMERA1_ISR)
+                  0000db82    00000002     main.obj (.text:vMain_EventTrigger)
+
+.const     0    0000db84    0000009c     
+                  0000db84    0000006c     main.obj (.const:.string)
+                  0000dbf0    00000010     crc.obj (.const:.string:ucCRC16_lookupHI)
+                  0000dc00    00000010     crc.obj (.const:.string:ucCRC16_lookupLO)
+                  0000dc10    00000004     STM.obj (.const:.string:$P$T0$1)
+                  0000dc14    00000004     STM.obj (.const:.string:$P$T1$2)
+                  0000dc18    00000004     STM.obj (.const:.string:$P$T2$3)
+                  0000dc1c    00000004     STM.obj (.const:.string:$P$T3$4)
+
+.cinit     0    0000dc20    00000032     
+                  0000dc20    00000029     STM.obj (.cinit)
+                  0000dc49    00000001     --HOLE-- [fill = 0]
+                  0000dc4a    00000005     main.obj (.cinit)
+                  0000dc4f    00000001     --HOLE-- [fill = 0]
+                  0000dc50    00000002     (.pad.cinit) [fill = 0]
+
+.pinit     0    0000c000    00000000     UNINITIALIZED
+
+PORT1      0    0000ffe4    00000002     
+                  0000ffe4    00000002     irupt.obj (.int02)
+
+PORT2      0    0000ffe6    00000002     
+                  0000ffe6    00000002     irupt.obj (.int03)
+
+ADC12      0    0000ffea    00000002     
+                  0000ffea    00000002     rts430.lib : int05.obj (.int05)
+
+USCIAB0TX 
+*          0    0000ffec    00000002     
+                  0000ffec    00000002     rts430.lib : int06.obj (.int06)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     rts430.lib : int07.obj (.int07)
+
+TIMERA1    0    0000fff0    00000002     
+                  0000fff0    00000002     irupt.obj (.int08)
+
+TIMERA0    0    0000fff2    00000002     
+                  0000fff2    00000002     rts430.lib : int09.obj (.int09)
+
+WDT        0    0000fff4    00000002     
+                  0000fff4    00000002     rts430.lib : int10.obj (.int10)
+
+COMPARATORA 
+*          0    0000fff6    00000002     
+                  0000fff6    00000002     irupt.obj (.int11)
+
+TIMERB1    0    0000fff8    00000002     
+                  0000fff8    00000002     irupt.obj (.int12)
+
+TIMERB0    0    0000fffa    00000002     
+                  0000fffa    00000002     rts430.lib : int13.obj (.int13)
+
+NMI        0    0000fffc    00000002     
+                  0000fffc    00000002     irupt.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+00000200  .bss                           
+00000200  .data                          
+0000c000  .text                          
+000001a0  ADC12CTL0                      
+000001a2  ADC12CTL1                      
+000001a6  ADC12IE                        
+000001a4  ADC12IFG                       
+000001a8  ADC12IV                        
+00000080  ADC12MCTL0                     
+00000081  ADC12MCTL1                     
+0000008a  ADC12MCTL10                    
+0000008b  ADC12MCTL11                    
+0000008c  ADC12MCTL12                    
+0000008d  ADC12MCTL13                    
+0000008e  ADC12MCTL14                    
+0000008f  ADC12MCTL15                    
+00000082  ADC12MCTL2                     
+00000083  ADC12MCTL3                     
+00000084  ADC12MCTL4                     
+00000085  ADC12MCTL5                     
+00000086  ADC12MCTL6                     
+00000087  ADC12MCTL7                     
+00000088  ADC12MCTL8                     
+00000089  ADC12MCTL9                     
+00000140  ADC12MEM0                      
+00000142  ADC12MEM1                      
+00000154  ADC12MEM10                     
+00000156  ADC12MEM11                     
+00000158  ADC12MEM12                     
+0000015a  ADC12MEM13                     
+0000015c  ADC12MEM14                     
+0000015e  ADC12MEM15                     
+00000144  ADC12MEM2                      
+00000146  ADC12MEM3                      
+00000148  ADC12MEM4                      
+0000014a  ADC12MEM5                      
+0000014c  ADC12MEM6                      
+0000014e  ADC12MEM7                      
+00000150  ADC12MEM8                      
+00000152  ADC12MEM9                      
+000002aa  ADCISRindicator                
+00000057  BCSCTL1                        
+00000058  BCSCTL2                        
+00000053  BCSCTL3                        
+0000db6c  C$$EXIT                        
+00000059  CACTL1                         
+0000005a  CACTL2                         
+000010fb  CALBC1_12MHZ                   
+000010f9  CALBC1_16MHZ                   
+000010ff  CALBC1_1MHZ                    
+000010fd  CALBC1_8MHZ                    
+000010fa  CALDCO_12MHZ                   
+000010f8  CALDCO_16MHZ                   
+000010fe  CALDCO_1MHZ                    
+000010fc  CALDCO_8MHZ                    
+0000005b  CAPD                           
+0000db7c  COMPARATORA_ISR                
+00000056  DCOCTL                         
+00000128  FCTL1                          
+0000012a  FCTL2                          
+0000012c  FCTL3                          
+000001be  FCTL4                          
+00000000  IE1                            
+00000001  IE2                            
+00000002  IFG1                           
+00000003  IFG2                           
+000002a9  ISR                            
+0000d8f6  I_ASR                          
+0000d91e  I_ASR_1                        
+0000d90c  I_ASR_10                       
+0000d90a  I_ASR_11                       
+0000d908  I_ASR_12                       
+0000d906  I_ASR_13                       
+0000d904  I_ASR_14                       
+0000d902  I_ASR_15                       
+0000d91c  I_ASR_2                        
+0000d91a  I_ASR_3                        
+0000d918  I_ASR_4                        
+0000d916  I_ASR_5                        
+0000d914  I_ASR_6                        
+0000d912  I_ASR_7                        
+0000d910  I_ASR_8                        
+0000d90e  I_ASR_9                        
+0000d94e  I_LSL                          
+0000d976  I_LSL_1                        
+0000d964  I_LSL_10                       
+0000d962  I_LSL_11                       
+0000d960  I_LSL_12                       
+0000d95e  I_LSL_13                       
+0000d95c  I_LSL_14                       
+0000d95a  I_LSL_15                       
+0000d974  I_LSL_2                        
+0000d972  I_LSL_3                        
+0000d970  I_LSL_4                        
+0000d96e  I_LSL_5                        
+0000d96c  I_LSL_6                        
+0000d96a  I_LSL_7                        
+0000d968  I_LSL_8                        
+0000d966  I_LSL_9                        
+0000d53e  I_LSR                          
+0000d584  I_LSR_1                        
+0000d560  I_LSR_10                       
+0000d55c  I_LSR_11                       
+0000d558  I_LSR_12                       
+0000d554  I_LSR_13                       
+0000d550  I_LSR_14                       
+0000d54c  I_LSR_15                       
+0000d580  I_LSR_2                        
+0000d57c  I_LSR_3                        
+0000d578  I_LSR_4                        
+0000d574  I_LSR_5                        
+0000d570  I_LSR_6                        
+0000d56c  I_LSR_7                        
+0000d568  I_LSR_8                        
+0000d564  I_LSR_9                        
+0000d696  L_ASR_1                        
+0000d672  L_ASR_10                       
+0000d66e  L_ASR_11                       
+0000d66a  L_ASR_12                       
+0000d666  L_ASR_13                       
+0000d662  L_ASR_14                       
+0000d65e  L_ASR_15                       
+0000d692  L_ASR_2                        
+0000d68e  L_ASR_3                        
+0000d68a  L_ASR_4                        
+0000d686  L_ASR_5                        
+0000d682  L_ASR_6                        
+0000d67e  L_ASR_7                        
+0000d67a  L_ASR_8                        
+0000d676  L_ASR_9                        
+0000db26  L_LSL                          
+00000134  MAC                            
+00000136  MACS                           
+00000130  MPY                            
+00000132  MPYS                           
+0000db7e  NMI_ISR                        
+00000138  OP2                            
+00000022  P1DIR                          
+00000025  P1IE                           
+00000024  P1IES                          
+00000023  P1IFG                          
+00000020  P1IN                           
+00000021  P1OUT                          
+00000027  P1REN                          
+00000026  P1SEL                          
+0000002a  P2DIR                          
+0000002d  P2IE                           
+0000002c  P2IES                          
+0000002b  P2IFG                          
+00000028  P2IN                           
+00000029  P2OUT                          
+0000002f  P2REN                          
+0000002e  P2SEL                          
+0000001a  P3DIR                          
+00000018  P3IN                           
+00000019  P3OUT                          
+00000010  P3REN                          
+0000001b  P3SEL                          
+0000001e  P4DIR                          
+0000001c  P4IN                           
+0000001d  P4OUT                          
+00000011  P4REN                          
+0000001f  P4SEL                          
+00000032  P5DIR                          
+00000030  P5IN                           
+00000031  P5OUT                          
+00000012  P5REN                          
+00000033  P5SEL                          
+00000036  P6DIR                          
+00000034  P6IN                           
+00000035  P6OUT                          
+00000013  P6REN                          
+00000037  P6SEL                          
+0000d17a  PORT1_ISR                      
+0000d9a6  PORT2_ISR                      
+0000013c  RESHI                          
+0000013a  RESLO                          
+0000013e  SUMEXT                         
+00000055  SVSCTL                         
+0000024c  S_Report                       
+00000172  TACCR0                         
+00000174  TACCR1                         
+00000176  TACCR2                         
+00000162  TACCTL0                        
+00000164  TACCTL1                        
+00000166  TACCTL2                        
+00000160  TACTL                          
+0000012e  TAIV                           
+00000170  TAR                            
+00000192  TBCCR0                         
+00000194  TBCCR1                         
+00000196  TBCCR2                         
+00000182  TBCCTL0                        
+00000184  TBCCTL1                        
+00000186  TBCCTL2                        
+00000180  TBCTL                          
+0000011e  TBIV                           
+00000190  TBR                            
+0000db80  TIMERA1_ISR                    
+0000cebe  TIMERB1_ISR                    
+000010db  TLV_ADC12_1_LEN                
+000010da  TLV_ADC12_1_TAG                
+000010c0  TLV_CHECKSUM                   
+000010f7  TLV_DCO_30_LEN                 
+000010f6  TLV_DCO_30_TAG                 
+0000005d  UCA0ABCTL                      
+00000062  UCA0BR0                        
+00000063  UCA0BR1                        
+00000060  UCA0CTL0                       
+00000061  UCA0CTL1                       
+0000005f  UCA0IRRCTL                     
+0000005e  UCA0IRTCTL                     
+00000064  UCA0MCTL                       
+00000066  UCA0RXBUF                      
+00000065  UCA0STAT                       
+00000067  UCA0TXBUF                      
+0000006a  UCB0BR0                        
+0000006b  UCB0BR1                        
+00000068  UCB0CTL0                       
+00000069  UCB0CTL1                       
+0000006c  UCB0I2CIE                      
+00000118  UCB0I2COA                      
+0000011a  UCB0I2CSA                      
+0000006e  UCB0RXBUF                      
+0000006d  UCB0STAT                       
+0000006f  UCB0TXBUF                      
+00000120  WDTCTL                         
+00000a00  __STACK_END                    
+00000050  __STACK_SIZE                   
+0000db50  __TI_ISR_TRAP                  
+0000ffe4  __TI_int02                     
+0000ffe6  __TI_int03                     
+0000ffea  __TI_int05                     
+0000ffec  __TI_int06                     
+0000ffee  __TI_int07                     
+0000fff0  __TI_int08                     
+0000fff2  __TI_int09                     
+0000fff4  __TI_int10                     
+0000fff6  __TI_int11                     
+0000fff8  __TI_int12                     
+0000fffa  __TI_int13                     
+0000fffc  __TI_int14                     
+ffffffff  __binit__                      
+00000200  __bss__                        
+ffffffff  __c_args__                     
+0000dc20  __cinit__                      
+00000200  __data__                       
+0000d922  __divi                         
+0000dac6  __divu                         
+00000200  __edata__                      
+000002b4  __end__                        
+0000db84  __etext__                      
+0000dadc  __mpyi_hw                      
+0000d89a  __mpyl_hw                      
+ffffffff  __pinit__                      
+0000d922  __remi                         
+0000dac6  __remu                         
+0000c000  __text__                       
+0000d5d6  _auto_init                     
+0000da62  _c_int00_noargs_noexit         
+0000fffe  _reset_vector                  
+000009b0  _stack                         
+0000db68  _system_pre_init               
+0000db6c  abort                          
+ffffffff  binit                          
+0000024a  cSTM_Initialized               
+0000c924  cSTM_Measure                   
+0000029c  cSTM_RX_Pin                    
+0000c536  cSTM_ReadValue                 
+0000c7c2  cSTM_RequestSensorType         
+0000d868  cSTM_ReturnSensorType          
+0000d3e8  cSTM_Test_Checksum             
+0000dc20  cinit                          
+00000200  edata                          
+000002b4  end                            
+0000db84  etext                          
+0000db42  func_epilog_1                  
+0000db40  func_epilog_2                  
+0000db3e  func_epilog_3                  
+0000db3c  func_epilog_4                  
+0000db3a  func_epilog_5                  
+0000db38  func_epilog_6                  
+0000db36  func_epilog_7                  
+00000282  g_iVLOCal                      
+00000200  g_ucCOMM_Flags                 
+00000284  g_ucEventTrigger               
+00000247  g_ucRXBitsLeft                 
+00000246  g_ucRXBufferIndex              
+0000029b  g_ucSTM_RXBitsLeft             
+0000029a  g_ucSTM_RXBufferIndex          
+0000029d  g_ucSTM_RXBusy                 
+00000206  g_ucaRXBuffer                  
+00000286  g_ucaSTM_RXBuffer              
+00000202  g_unCOMM_BaudRateControl       
+00000204  g_unCOMM_BaudRateDelayControl  
+0000db56  iSTM_GetTemp                   
+0000db46  lSTM_GetSoil                   
+000002a0  lSTM_Soil                      
+0000daf0  main                           
+0000db02  memcpy                         
+0000029e  nSTM_Temperature               
+ffffffff  pinit                          
+000002a8  timeoutcounter                 
+0000d444  ucCOMM_GrabMessageFromBuffer   
+0000d032  ucCOMM_ReceiveByte             
+0000cf7e  ucCOMM_SendByte                
+0000d718  ucCOMM_WaitForMessage          
+0000d69c  ucCOMM_WaitForStartCondition   
+0000d292  ucCRC16_compute_msg_CRC        
+0000dbf0  ucCRC16_lookupHI               
+0000dc00  ucCRC16_lookupLO               
+0000d4ec  ucFlash_SetHID                 
+0000db5c  ucMAIN_ReturnSensorType        
+0000d20e  ucMain_FetchData               
+0000db70  ucMain_ShutdownAllowed         
+0000db74  ucMain_getNumTransducers       
+0000db78  ucMain_getSampleDuration       
+0000db14  ucMain_getTransducerType       
+00000248  ucRXParityBit                  
+000002ac  uiHID                          
+0000d790  uiMainDispatch                 
+0000cb1e  uiMain_STM1                    
+0000cc10  uiMain_STM2                    
+0000ca2a  uiMain_STM3                    
+0000cd02  uiMain_STM4                    
+0000da96  uiMain_Test                    
+000002a4  uiSTM1_type                    
+000002a5  uiSTM2_type                    
+000002a6  uiSTM3_type                    
+000002a7  uiSTM4_type                    
+0000d306  unCORE_GetVoltage              
+0000d58a  vCOMM_Init                     
+0000d754  vCOMM_SendMessage              
+0000d0d6  vCORE_Initilize                
+0000c000  vCORE_Run                      
+0000d9f6  vCORE_Send_ConfirmPKT          
+0000d97a  vCORE_Send_ErrorMsg            
+0000da7c  vCRC16_updateByte              
+0000d6da  vCRC16_updateNibble            
+0000d8c8  vFlash_DisIncorrect_BSLPW_Erase
+0000da44  vFlash_Erase_Seg               
+0000d378  vFlash_GetBSLPW                
+0000da1e  vFlash_GetHID                  
+0000d834  vFlash_Read_Segment            
+0000daae  vFlash_init                    
+0000db62  vMAIN_RequestSensorType        
+0000d498  vMain_CleanDataStruct          
+0000db82  vMain_EventTrigger             
+0000cdf4  vMain_FetchLabel               
+0000d7ca  vSTM_Initialize                
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  IE1                            
+00000001  IE2                            
+00000002  IFG1                           
+00000003  IFG2                           
+00000010  P3REN                          
+00000011  P4REN                          
+00000012  P5REN                          
+00000013  P6REN                          
+00000018  P3IN                           
+00000019  P3OUT                          
+0000001a  P3DIR                          
+0000001b  P3SEL                          
+0000001c  P4IN                           
+0000001d  P4OUT                          
+0000001e  P4DIR                          
+0000001f  P4SEL                          
+00000020  P1IN                           
+00000021  P1OUT                          
+00000022  P1DIR                          
+00000023  P1IFG                          
+00000024  P1IES                          
+00000025  P1IE                           
+00000026  P1SEL                          
+00000027  P1REN                          
+00000028  P2IN                           
+00000029  P2OUT                          
+0000002a  P2DIR                          
+0000002b  P2IFG                          
+0000002c  P2IES                          
+0000002d  P2IE                           
+0000002e  P2SEL                          
+0000002f  P2REN                          
+00000030  P5IN                           
+00000031  P5OUT                          
+00000032  P5DIR                          
+00000033  P5SEL                          
+00000034  P6IN                           
+00000035  P6OUT                          
+00000036  P6DIR                          
+00000037  P6SEL                          
+00000050  __STACK_SIZE                   
+00000053  BCSCTL3                        
+00000055  SVSCTL                         
+00000056  DCOCTL                         
+00000057  BCSCTL1                        
+00000058  BCSCTL2                        
+00000059  CACTL1                         
+0000005a  CACTL2                         
+0000005b  CAPD                           
+0000005d  UCA0ABCTL                      
+0000005e  UCA0IRTCTL                     
+0000005f  UCA0IRRCTL                     
+00000060  UCA0CTL0                       
+00000061  UCA0CTL1                       
+00000062  UCA0BR0                        
+00000063  UCA0BR1                        
+00000064  UCA0MCTL                       
+00000065  UCA0STAT                       
+00000066  UCA0RXBUF                      
+00000067  UCA0TXBUF                      
+00000068  UCB0CTL0                       
+00000069  UCB0CTL1                       
+0000006a  UCB0BR0                        
+0000006b  UCB0BR1                        
+0000006c  UCB0I2CIE                      
+0000006d  UCB0STAT                       
+0000006e  UCB0RXBUF                      
+0000006f  UCB0TXBUF                      
+00000080  ADC12MCTL0                     
+00000081  ADC12MCTL1                     
+00000082  ADC12MCTL2                     
+00000083  ADC12MCTL3                     
+00000084  ADC12MCTL4                     
+00000085  ADC12MCTL5                     
+00000086  ADC12MCTL6                     
+00000087  ADC12MCTL7                     
+00000088  ADC12MCTL8                     
+00000089  ADC12MCTL9                     
+0000008a  ADC12MCTL10                    
+0000008b  ADC12MCTL11                    
+0000008c  ADC12MCTL12                    
+0000008d  ADC12MCTL13                    
+0000008e  ADC12MCTL14                    
+0000008f  ADC12MCTL15                    
+00000118  UCB0I2COA                      
+0000011a  UCB0I2CSA                      
+0000011e  TBIV                           
+00000120  WDTCTL                         
+00000128  FCTL1                          
+0000012a  FCTL2                          
+0000012c  FCTL3                          
+0000012e  TAIV                           
+00000130  MPY                            
+00000132  MPYS                           
+00000134  MAC                            
+00000136  MACS                           
+00000138  OP2                            
+0000013a  RESLO                          
+0000013c  RESHI                          
+0000013e  SUMEXT                         
+00000140  ADC12MEM0                      
+00000142  ADC12MEM1                      
+00000144  ADC12MEM2                      
+00000146  ADC12MEM3                      
+00000148  ADC12MEM4                      
+0000014a  ADC12MEM5                      
+0000014c  ADC12MEM6                      
+0000014e  ADC12MEM7                      
+00000150  ADC12MEM8                      
+00000152  ADC12MEM9                      
+00000154  ADC12MEM10                     
+00000156  ADC12MEM11                     
+00000158  ADC12MEM12                     
+0000015a  ADC12MEM13                     
+0000015c  ADC12MEM14                     
+0000015e  ADC12MEM15                     
+00000160  TACTL                          
+00000162  TACCTL0                        
+00000164  TACCTL1                        
+00000166  TACCTL2                        
+00000170  TAR                            
+00000172  TACCR0                         
+00000174  TACCR1                         
+00000176  TACCR2                         
+00000180  TBCTL                          
+00000182  TBCCTL0                        
+00000184  TBCCTL1                        
+00000186  TBCCTL2                        
+00000190  TBR                            
+00000192  TBCCR0                         
+00000194  TBCCR1                         
+00000196  TBCCR2                         
+000001a0  ADC12CTL0                      
+000001a2  ADC12CTL1                      
+000001a4  ADC12IFG                       
+000001a6  ADC12IE                        
+000001a8  ADC12IV                        
+000001be  FCTL4                          
+00000200  .bss                           
+00000200  .data                          
+00000200  __bss__                        
+00000200  __data__                       
+00000200  __edata__                      
+00000200  edata                          
+00000200  g_ucCOMM_Flags                 
+00000202  g_unCOMM_BaudRateControl       
+00000204  g_unCOMM_BaudRateDelayControl  
+00000206  g_ucaRXBuffer                  
+00000246  g_ucRXBufferIndex              
+00000247  g_ucRXBitsLeft                 
+00000248  ucRXParityBit                  
+0000024a  cSTM_Initialized               
+0000024c  S_Report                       
+00000282  g_iVLOCal                      
+00000284  g_ucEventTrigger               
+00000286  g_ucaSTM_RXBuffer              
+0000029a  g_ucSTM_RXBufferIndex          
+0000029b  g_ucSTM_RXBitsLeft             
+0000029c  cSTM_RX_Pin                    
+0000029d  g_ucSTM_RXBusy                 
+0000029e  nSTM_Temperature               
+000002a0  lSTM_Soil                      
+000002a4  uiSTM1_type                    
+000002a5  uiSTM2_type                    
+000002a6  uiSTM3_type                    
+000002a7  uiSTM4_type                    
+000002a8  timeoutcounter                 
+000002a9  ISR                            
+000002aa  ADCISRindicator                
+000002ac  uiHID                          
+000002b4  __end__                        
+000002b4  end                            
+000009b0  _stack                         
+00000a00  __STACK_END                    
+000010c0  TLV_CHECKSUM                   
+000010da  TLV_ADC12_1_TAG                
+000010db  TLV_ADC12_1_LEN                
+000010f6  TLV_DCO_30_TAG                 
+000010f7  TLV_DCO_30_LEN                 
+000010f8  CALDCO_16MHZ                   
+000010f9  CALBC1_16MHZ                   
+000010fa  CALDCO_12MHZ                   
+000010fb  CALBC1_12MHZ                   
+000010fc  CALDCO_8MHZ                    
+000010fd  CALBC1_8MHZ                    
+000010fe  CALDCO_1MHZ                    
+000010ff  CALBC1_1MHZ                    
+0000c000  .text                          
+0000c000  __text__                       
+0000c000  vCORE_Run                      
+0000c536  cSTM_ReadValue                 
+0000c7c2  cSTM_RequestSensorType         
+0000c924  cSTM_Measure                   
+0000ca2a  uiMain_STM3                    
+0000cb1e  uiMain_STM1                    
+0000cc10  uiMain_STM2                    
+0000cd02  uiMain_STM4                    
+0000cdf4  vMain_FetchLabel               
+0000cebe  TIMERB1_ISR                    
+0000cf7e  ucCOMM_SendByte                
+0000d032  ucCOMM_ReceiveByte             
+0000d0d6  vCORE_Initilize                
+0000d17a  PORT1_ISR                      
+0000d20e  ucMain_FetchData               
+0000d292  ucCRC16_compute_msg_CRC        
+0000d306  unCORE_GetVoltage              
+0000d378  vFlash_GetBSLPW                
+0000d3e8  cSTM_Test_Checksum             
+0000d444  ucCOMM_GrabMessageFromBuffer   
+0000d498  vMain_CleanDataStruct          
+0000d4ec  ucFlash_SetHID                 
+0000d53e  I_LSR                          
+0000d54c  I_LSR_15                       
+0000d550  I_LSR_14                       
+0000d554  I_LSR_13                       
+0000d558  I_LSR_12                       
+0000d55c  I_LSR_11                       
+0000d560  I_LSR_10                       
+0000d564  I_LSR_9                        
+0000d568  I_LSR_8                        
+0000d56c  I_LSR_7                        
+0000d570  I_LSR_6                        
+0000d574  I_LSR_5                        
+0000d578  I_LSR_4                        
+0000d57c  I_LSR_3                        
+0000d580  I_LSR_2                        
+0000d584  I_LSR_1                        
+0000d58a  vCOMM_Init                     
+0000d5d6  _auto_init                     
+0000d65e  L_ASR_15                       
+0000d662  L_ASR_14                       
+0000d666  L_ASR_13                       
+0000d66a  L_ASR_12                       
+0000d66e  L_ASR_11                       
+0000d672  L_ASR_10                       
+0000d676  L_ASR_9                        
+0000d67a  L_ASR_8                        
+0000d67e  L_ASR_7                        
+0000d682  L_ASR_6                        
+0000d686  L_ASR_5                        
+0000d68a  L_ASR_4                        
+0000d68e  L_ASR_3                        
+0000d692  L_ASR_2                        
+0000d696  L_ASR_1                        
+0000d69c  ucCOMM_WaitForStartCondition   
+0000d6da  vCRC16_updateNibble            
+0000d718  ucCOMM_WaitForMessage          
+0000d754  vCOMM_SendMessage              
+0000d790  uiMainDispatch                 
+0000d7ca  vSTM_Initialize                
+0000d834  vFlash_Read_Segment            
+0000d868  cSTM_ReturnSensorType          
+0000d89a  __mpyl_hw                      
+0000d8c8  vFlash_DisIncorrect_BSLPW_Erase
+0000d8f6  I_ASR                          
+0000d902  I_ASR_15                       
+0000d904  I_ASR_14                       
+0000d906  I_ASR_13                       
+0000d908  I_ASR_12                       
+0000d90a  I_ASR_11                       
+0000d90c  I_ASR_10                       
+0000d90e  I_ASR_9                        
+0000d910  I_ASR_8                        
+0000d912  I_ASR_7                        
+0000d914  I_ASR_6                        
+0000d916  I_ASR_5                        
+0000d918  I_ASR_4                        
+0000d91a  I_ASR_3                        
+0000d91c  I_ASR_2                        
+0000d91e  I_ASR_1                        
+0000d922  __divi                         
+0000d922  __remi                         
+0000d94e  I_LSL                          
+0000d95a  I_LSL_15                       
+0000d95c  I_LSL_14                       
+0000d95e  I_LSL_13                       
+0000d960  I_LSL_12                       
+0000d962  I_LSL_11                       
+0000d964  I_LSL_10                       
+0000d966  I_LSL_9                        
+0000d968  I_LSL_8                        
+0000d96a  I_LSL_7                        
+0000d96c  I_LSL_6                        
+0000d96e  I_LSL_5                        
+0000d970  I_LSL_4                        
+0000d972  I_LSL_3                        
+0000d974  I_LSL_2                        
+0000d976  I_LSL_1                        
+0000d97a  vCORE_Send_ErrorMsg            
+0000d9a6  PORT2_ISR                      
+0000d9f6  vCORE_Send_ConfirmPKT          
+0000da1e  vFlash_GetHID                  
+0000da44  vFlash_Erase_Seg               
+0000da62  _c_int00_noargs_noexit         
+0000da7c  vCRC16_updateByte              
+0000da96  uiMain_Test                    
+0000daae  vFlash_init                    
+0000dac6  __divu                         
+0000dac6  __remu                         
+0000dadc  __mpyi_hw                      
+0000daf0  main                           
+0000db02  memcpy                         
+0000db14  ucMain_getTransducerType       
+0000db26  L_LSL                          
+0000db36  func_epilog_7                  
+0000db38  func_epilog_6                  
+0000db3a  func_epilog_5                  
+0000db3c  func_epilog_4                  
+0000db3e  func_epilog_3                  
+0000db40  func_epilog_2                  
+0000db42  func_epilog_1                  
+0000db46  lSTM_GetSoil                   
+0000db50  __TI_ISR_TRAP                  
+0000db56  iSTM_GetTemp                   
+0000db5c  ucMAIN_ReturnSensorType        
+0000db62  vMAIN_RequestSensorType        
+0000db68  _system_pre_init               
+0000db6c  C$$EXIT                        
+0000db6c  abort                          
+0000db70  ucMain_ShutdownAllowed         
+0000db74  ucMain_getNumTransducers       
+0000db78  ucMain_getSampleDuration       
+0000db7c  COMPARATORA_ISR                
+0000db7e  NMI_ISR                        
+0000db80  TIMERA1_ISR                    
+0000db82  vMain_EventTrigger             
+0000db84  __etext__                      
+0000db84  etext                          
+0000dbf0  ucCRC16_lookupHI               
+0000dc00  ucCRC16_lookupLO               
+0000dc20  __cinit__                      
+0000dc20  cinit                          
+0000ffe4  __TI_int02                     
+0000ffe6  __TI_int03                     
+0000ffea  __TI_int05                     
+0000ffec  __TI_int06                     
+0000ffee  __TI_int07                     
+0000fff0  __TI_int08                     
+0000fff2  __TI_int09                     
+0000fff4  __TI_int10                     
+0000fff6  __TI_int11                     
+0000fff8  __TI_int12                     
+0000fffa  __TI_int13                     
+0000fffc  __TI_int14                     
+0000fffe  _reset_vector                  
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  __pinit__                      
+ffffffff  binit                          
+ffffffff  pinit                          
+
+[350 symbols]

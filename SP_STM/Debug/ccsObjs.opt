@@ -1,0 +1,1 @@
+"./irupt.obj" "./main.obj" "./core/core.obj" "./core/flash.obj" "./core/comm/comm.obj" "./core/comm/crc.obj" "./UART/uartCom.obj" "./STM/STM.obj" "../lnk_msp430f235.cmd" -l"libc.a" 
